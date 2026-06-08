@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard - Bus Booking</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="topbar">
+            <a class="brand" href="admin.html">Admin Dashboard</a>
+            <div class="nav-links">
+                <a href="book.html">Booking Page</a>
+                <button id="adminLogoutButton" class="link-button" type="button">Logout</button>
+            </div>
+        </nav>
+
+        <p id="message" class="alert hidden"></p>
+
+        <section class="admin-summary">
+            <article class="panel stat-panel">
+                <span class="muted">Users</span>
+                <strong id="totalUsers">0</strong>
+            </article>
+            <article class="panel stat-panel">
+                <span class="muted">Tickets</span>
+                <strong id="totalBookings">0</strong>
+            </article>
+        </section>
+
+        <section class="admin-grid">
+            <div class="panel">
+                <h2>Routes</h2>
+                <form id="routeForm" class="inline-form">
+                    <input id="routeCity" name="city" type="text" required placeholder="Example: Arusha">
+                    <button type="submit">Add Route</button>
+                </form>
+                <div id="adminRoutes" class="route-list"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Users</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminUsers"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel admin-wide">
+                <h2>Tickets</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Passenger</th>
+                                <th>Email</th>
+                                <th>Route</th>
+                                <th>Date</th>
+                                <th>Seat</th>
+                                <th>Booked</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminBookings"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

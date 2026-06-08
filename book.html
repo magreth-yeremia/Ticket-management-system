@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf8mb4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Ticket - Bus Booking</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="topbar">
+            <a class="brand" href="book.html">Bus Booking</a>
+            <div class="nav-links">
+                <div class="profile-box">
+                    <button id="profilePhotoButton" class="profile-photo-button" type="button" aria-label="Upload profile photo">
+                        <img id="profilePhoto" class="profile-photo empty" alt="Profile photo">
+                    </button>
+                    <form id="profileForm" class="profile-form" enctype="multipart/form-data">
+                        <input id="profile_photo" name="profile_photo" type="file" accept="image/*" required>
+                    </form>
+                    <span id="userName"></span>
+                </div>
+                <button id="logoutButton" class="link-button" type="button">Logout</button>
+            </div>
+        </nav>
+
+        <section class="booking-layout">
+            <div class="panel">
+                <h1>Book Ticket</h1>
+                <p id="message" class="alert hidden"></p>
+
+                <form id="bookingForm">
+                    <label for="from_city">From</label>
+                    <select id="from_city" name="from_city" required>
+                        <option value="">Select departure</option>
+                        <option></option>
+                    </select>
+
+                    <label for="to_city">To</label>
+                    <select id="to_city" name="to_city" required>
+                        <option value="">Select destination</option>
+                        <option>Nairobi</option>
+                        <option>Mombasa</option>
+                        <option>Kisumu</option>
+                        <option>Nakuru</option>
+                        <option>Eldoret</option>
+                    </select>
+
+                    <label for="travel_date">Travel Date</label>
+                    <input id="travel_date" name="travel_date" type="date" required>
+
+                    <label for="seat_number">Seat Number</label>
+                    <input id="seat_number" name="seat_number" type="text" required placeholder="Example: A1">
+
+                    <button type="submit">Book Ticket</button>
+                </form>
+            </div>
+
+            <div id="ticketsPanel" class="panel">
+                <h2>Your Tickets</h2>
+                <div id="tickets" class="tickets"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
